@@ -26,6 +26,6 @@ jar {
         }
     }
     manifest {
-        attributes("Main-Class": "graal.project.Application" )
+        attributes("Main-Class": "graal.project.Bootstrap" )
     }
 }
