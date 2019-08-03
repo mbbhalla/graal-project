@@ -1,0 +1,4 @@
+
+native-image -H:ReflectionConfigurationFiles=reflection-config.json -H:ResourceConfigurationFiles=resources-config.json -cp build/libs/bootstrap.jar graal.project.Bootstrap  --no-server --enable-http --enable-https --enable-url-protocols=http,https --enable-all-security-services
+ 
+ 

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO" packages="com.amazonaws.services.lambda.runtime.log4j2">
+    <Appenders>
+        <Lambda name="LambdaAppender">
+            <PatternLayout pattern="%d{dd MMM yyyy HH:mm:ss,SSS} [%p] %X{AWSRequestId} ~(%t) %c: %m%n"/>
+        </Lambda>
+    </Appenders>
+    <Loggers>
+        <Root level="INFO">
+            <AppenderRef ref="LambdaAppender"></AppenderRef>
+        </Root>
+    </Loggers>
+</Configuration>
