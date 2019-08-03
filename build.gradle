@@ -1,0 +1,31 @@
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+archivesBaseName = 'bootstrap'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'com.mashape.unirest:unirest-java:1.4.9'
+    compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.12.0'
+    compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.12.0'
+    
+    implementation 'com.amazonaws:aws-lambda-java-core:1.0.0'
+    
+    compileOnly 'org.projectlombok:lombok:1.18.4'
+    annotationProcessor 'org.projectlombok:lombok:1.18.4'
+}
+
+jar {
+    from {
+        (configurations.runtime).collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
+    manifest {
+        attributes("Main-Class": "graal.project.Application" )
+    }
+}
