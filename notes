@@ -1,4 +1,5 @@
 
-native-image -H:ReflectionConfigurationFiles=reflection-config.json -H:ResourceConfigurationFiles=resources-config.json -cp build/libs/bootstrap.jar graal.project.Bootstrap  --no-server --enable-http --enable-https --enable-url-protocols=http,https --enable-all-security-services
- 
- 
+
+CMD='./gradlew clean jar && native-image -H:ReflectionConfigurationFiles=reflection-config.json -H:ResourceConfigurationFiles=resources-config.json -cp build/libs/bootstrap.jar graal.project.bootstrap  --no-server --enable-http --enable-https --enable-url-protocols=http,https --enable-all-security-services && mv graal.project.Bootstrap bootstrap && zip deployment.zip bootstrap'
+
+

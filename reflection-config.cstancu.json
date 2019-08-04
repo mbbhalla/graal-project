@@ -1,14 +1,5 @@
 [
   {
-    "name" : "graal.project.handler.Handler",
-    "allDeclaredConstructors" : true,
-    "allPublicConstructors" : true,
-    "allDeclaredMethods" : true,
-    "allPublicMethods" : true,
-    "allDeclaredFields" : true,
-    "allPublicFields" : true
-  },
-  {
     "name":"java.io.ObjectInputStream",
     "allPublicMethods":true
   },
@@ -143,5 +134,11 @@
     "methods": [
       { "name": "<init>", "parameterTypes": [] }
     ]
+  },
+  {
+    "name" : "org.apache.logging.log4j.core.impl.Log4jContextFactory",
+     "methods" : [
+         { "name" : "<init>", "parameterTypes" : [] }
+     ]
   }
 ]

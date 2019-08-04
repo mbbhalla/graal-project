@@ -6,8 +6,11 @@ import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
 
 import graal.project.handler.Handler;
-import lombok.val;
 
+import lombok.val;
+import lombok.extern.log4j.Log4j2;
+
+@Log4j2
 public class Bootstrap {
     
     private void execute(
@@ -21,6 +24,8 @@ public class Bootstrap {
         val lambdaARN = System.getenv("Lambda-Runtime-Invoked-Function-Arn");
         val handlerClassName = System.getenv("_HANDLER").split("\\.")[0];
         val handlerMethodName = System.getenv("_HANDLER").split("\\.")[1];
+        
+        log.info(">>>>>>>>>>>>>>>>>>>>> " + runtimeAPIHostPort);
         
         Handler handler = null;
         try {
