@@ -10,6 +10,11 @@ import lombok.val;
 
 public class Bootstrap {
     
+    private void log(String statement) {
+        System.out.println(">>> " + statement);
+        System.err.println(">>> " + statement);
+    }
+    
     private void execute(
         final String[] args) {
             
@@ -21,6 +26,9 @@ public class Bootstrap {
         val lambdaARN = System.getenv("Lambda-Runtime-Invoked-Function-Arn");
         val handlerClassName = System.getenv("_HANDLER").split("\\.")[0];
         val handlerMethodName = System.getenv("_HANDLER").split("\\.")[1];
+        
+        
+        this.log(runtimeAPIHostPort);
         
         Handler handler = null;
         try {
